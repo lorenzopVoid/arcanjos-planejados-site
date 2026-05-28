@@ -1,0 +1,161 @@
+@media (max-width: 1080px) {
+  .site-header__nav,
+  .site-header__cta {
+    display: none;
+  }
+
+  .site-header__menu {
+    display: block;
+  }
+
+  .service-grid,
+  .about-section__grid,
+  .process-grid,
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-section__heading,
+  .budget-section__grid,
+  .gallery-modal__footer {
+    align-items: stretch;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .process-step__arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --header-height: 76px;
+  }
+
+  .container {
+    width: min(100% - 28px, var(--container));
+  }
+
+  .section {
+    padding: 78px 0;
+  }
+
+  .brand span {
+    font-size: 1.05rem;
+  }
+
+  .brand img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .hero-section {
+    min-height: 760px;
+  }
+
+  .hero-section__actions,
+  .gallery-modal__content {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .service-grid,
+  .about-section__grid,
+  .process-grid,
+  .footer__grid,
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-section__controls {
+    display: none;
+  }
+
+  .about-section__media {
+    min-height: auto;
+  }
+
+  .about-section__image,
+  .floating-card {
+    position: static;
+  }
+
+  .about-section__image--primary,
+  .about-section__image--secondary {
+    width: 100%;
+    height: 320px;
+    margin-top: 18px;
+  }
+
+  .floating-card {
+    margin-top: 18px;
+  }
+
+  .portfolio-category-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+  }
+
+  .portfolio-category {
+    flex: 0 0 auto;
+  }
+
+  .portfolio-section__projects {
+    margin-top: 44px;
+    padding: 0 24px;
+  }
+
+  .portfolio-section__projects::before,
+  .portfolio-section__projects::after {
+    width: 24px;
+  }
+
+  .portfolio-carousel__track {
+    gap: 24px;
+    animation-duration: 34s;
+  }
+
+  .project-card {
+    flex-basis: min(360px, 82vw);
+  }
+
+  .project-card__media,
+  .service-card {
+    height: 390px;
+    min-height: 390px;
+  }
+
+  .budget-form {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .gallery-modal {
+    padding: 16px;
+  }
+
+  .gallery-modal__arrow {
+    display: none;
+  }
+
+  .gallery-modal__close {
+    top: 14px;
+    right: 14px;
+  }
+
+  .gallery-modal__image-wrap {
+    height: 48vh;
+  }
+
+  .gallery-modal__footer {
+    padding: 0 20px 22px;
+  }
+
+  .gallery-modal__project-nav {
+    flex-direction: column;
+    white-space: normal;
+  }
+}

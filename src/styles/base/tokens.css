@@ -1,0 +1,20 @@
+:root {
+  --color-black: #070b14;
+  --color-navy: #0d1524;
+  --color-gold: #d8b25f;
+  --color-gold-light: #f1d58b;
+  --color-cream: #f8f5ef;
+  --color-soft: #f4f6f8;
+  --color-white: #ffffff;
+  --color-muted: #657085;
+  --color-border: #e4e7ec;
+
+  --shadow-soft: 0 24px 70px rgb(7 11 20 / 12%);
+  --shadow-gold: 0 20px 80px rgb(216 178 95 / 22%);
+  --shadow-premium: 0 42px 120px rgb(0 0 0 / 22%);
+
+  --radius-lg: 24px;
+  --radius-xl: 34px;
+  --container: 1200px;
+  --header-height: 88px;
+}

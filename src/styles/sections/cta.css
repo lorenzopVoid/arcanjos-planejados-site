@@ -1,0 +1,25 @@
+.cta-section {
+  padding: 120px 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgb(216 178 95 / 20%), transparent 34%),
+    linear-gradient(135deg, var(--color-black), var(--color-navy));
+  color: var(--color-white);
+  text-align: center;
+}
+
+.cta-section__content {
+  max-width: 900px;
+}
+
+.cta-section svg {
+  margin: 0 auto 34px;
+  color: var(--color-gold-light);
+}
+
+.cta-section p {
+  color: rgb(255 255 255 / 78%);
+}
+
+.cta-section .button {
+  margin-top: 42px;
+}
