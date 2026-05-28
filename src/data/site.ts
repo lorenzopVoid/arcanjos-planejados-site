@@ -6,7 +6,7 @@ export const company = {
   phone: '(84) 98844-5467',
   phones: ['(84) 98844-5467', '(84) 98759-0488', '(84) 99165-5075'],
   email: 'contato@arcanjos-planejados.com',
-  address: 'Extremoz, RN',
+  address: 'Tv. Aida Costa, 03 - Santos Dumont, Extremoz, RN',
   whatsapp: '5584988445467',
 };
 

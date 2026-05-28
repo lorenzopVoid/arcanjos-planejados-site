@@ -1,42 +1,122 @@
 .footer {
-  padding: 70px 0 34px;
-  background: #eef1f5;
+  padding: 90px 0 36px;
+  background: #f7f7f8;
+  border-top: 1px solid rgb(15 23 42 / 6%);
 }
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.35fr 1fr 1fr 1.15fr;
-  gap: 54px;
-  padding-bottom: 46px;
-  border-bottom: 1px solid #d4dae3;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+  gap: 64px;
 }
 
 .footer__brand img {
-  width: 150px;
-  margin-bottom: 20px;
+  width: 110px;
+  margin-bottom: 24px;
 }
 
-.footer p,
-.footer a {
-  display: block;
-  margin: 0;
-  color: #475467;
-  line-height: 1.8;
+.footer__brand p {
+  max-width: 320px;
+  color: var(--color-muted);
+  line-height: 1.9;
+  font-size: 1rem;
 }
 
 .footer h4 {
-  margin: 0 0 20px;
-  font-size: 1.1rem;
+  margin-bottom: 24px;
+  font-size: 1.15rem;
+  font-weight: 750;
+  color: var(--color-black);
 }
 
-.footer__contact p {
+.footer a {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition:
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.footer a:hover {
+  color: var(--color-black);
+  transform: translateX(2px);
+}
+
+/* CONTATOS */
+
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 14px;
+  gap: 12px;
 }
 
+.footer__contact-item svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--color-black);
+}
+
+.footer__contact-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer__contact-item a,
+.footer__contact-item span {
+  color: var(--color-muted);
+  text-decoration: none;
+  line-height: 1.45;
+  transition: color 220ms ease;
+}
+
+.footer__contact-item a:hover {
+  color: var(--color-black);
+}
+
+/* COPYRIGHT */
+
 .footer__copy {
-  margin-top: 34px !important;
+  margin-top: 72px;
+  padding-top: 28px;
+  border-top: 1px solid rgb(15 23 42 / 8%);
   text-align: center;
+  color: var(--color-muted);
+  font-size: 0.96rem;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 980px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 72px 0 32px;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .footer__brand img {
+    width: 92px;
+  }
+
+  .footer__copy {
+    margin-top: 52px;
+  }
 }
