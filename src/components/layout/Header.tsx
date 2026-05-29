@@ -1,5 +1,6 @@
 import { Menu } from 'lucide-react';
-import logo from '../../assets/logo/arcanjos-logo.png';
+
+import logo from '../../assets/logo/arcanjos-logo.svg';
 import { company, navigation } from '../../data/site';
 import { createWhatsAppUrl } from '../../lib/whatsapp';
 import { ButtonLink } from '../ui/ButtonLink';
@@ -16,13 +17,19 @@ export function Header() {
 
         <nav className="site-header__nav" aria-label="Navegação principal">
           {navigation.map((item) => (
-            <a key={item.href} href={item.href}>
-              {item.label}
+            <a key={item.href} href={item.href} data-label={item.label}>
+              <span>{item.label}</span>
             </a>
           ))}
         </nav>
 
-        <ButtonLink href={createWhatsAppUrl()} variant="dark" className="site-header__cta">
+        <ButtonLink
+          href={createWhatsAppUrl()}
+          variant="light"
+          className="site-header__cta"
+          target="_blank"
+          rel="noreferrer"
+        >
           Solicitar Orçamento
         </ButtonLink>
 

@@ -1,6 +1,6 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
 
-import logo from '../../assets/logo/arcanjos-logo.png';
+import logo from '../../assets/logo/arcanjos-logo.svg';
 import { company } from '../../data/site';
 import { Container } from '../ui/Container';
 
