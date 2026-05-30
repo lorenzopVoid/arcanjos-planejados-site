@@ -12,9 +12,9 @@ export const company = {
 
 export const navigation: NavItem[] = [
   { label: 'Início', href: '#inicio' },
-  { label: 'Serviços', href: '#servicos' },
-  { label: 'Portfólio', href: '#portfolio' },
+  { label: 'Sobre nós', href: '#sobre' },
   { label: 'Processo', href: '#processo' },
+  { label: 'Portfólio', href: '#portfolio' },
   { label: 'Orçamento', href: '#orcamento' },
   { label: 'Contato', href: '#contato' },
 ];

@@ -14,10 +14,10 @@ export function App() {
       <Header />
       <main>
         <HeroSection />
-        <ServicesSection />
+        {/* <ServicesSection /> */}
         <AboutSection />
-        <PortfolioSection />
         <ProcessSection />
+        <PortfolioSection />
         <BudgetFormSection />
         <CtaSection />
       </main>

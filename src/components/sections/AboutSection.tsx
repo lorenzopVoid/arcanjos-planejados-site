@@ -148,7 +148,7 @@ const floatingBottom: Variants = {
 
 export function AboutSection() {
   return (
-    <section className="section about-section">
+    <section id="sobre" className="section about-section">
       <BrandMarqueeSection />
 
       <Container className="about-section__grid">
