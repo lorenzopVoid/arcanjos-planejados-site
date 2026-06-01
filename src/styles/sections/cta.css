@@ -16,6 +16,10 @@
   color: var(--color-gold-light);
 }
 
+.cta-section h2 {
+  font-size: var(--section-title-size);
+}
+
 .cta-section p {
   color: rgb(255 255 255 / 78%);
 }

@@ -51,7 +51,7 @@
 .process-section__header h2 {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(2rem, 3.2vw, 3.4rem);
+  font-size: var(--section-title-size);
   font-weight: 800;
   letter-spacing: -0.055em;
   line-height: 1.03;

@@ -9,6 +9,10 @@
   gap: 80px;
 }
 
+.about-section h2 {
+  font-size: var(--section-title-size);
+}
+
 .about-section__content > p {
   max-width: 620px;
 }

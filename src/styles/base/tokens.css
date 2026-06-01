@@ -17,4 +17,6 @@
   --radius-xl: 34px;
   --container: 1200px;
   --header-height: 88px;
+
+  --section-title-size: clamp(2rem, 3.2vw, 3.4rem);
 }

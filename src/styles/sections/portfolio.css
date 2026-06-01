@@ -3,6 +3,10 @@
   overflow: hidden;
 }
 
+.portfolio-section h2 {
+  font-size: var(--section-title-size);
+}
+
 .portfolio-category-list {
   display: flex;
   justify-content: center;
