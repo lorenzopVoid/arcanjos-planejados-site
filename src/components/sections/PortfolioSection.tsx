@@ -1,28 +1,34 @@
-import { useMemo, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Autoplay, Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { motion, Variants } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-
-import { portfolioCategories, projects } from '../../data/portfolio';
-import type { ProjectCategory } from '../../types/site';
-import { ProjectGalleryModal } from '../gallery/ProjectGalleryModal';
+import { portfolioCategories } from '../../data/portfolio';
 import { Container } from '../ui/Container';
 import { SectionHeader } from '../ui/SectionHeader';
 
-type ActiveCategory = ProjectCategory | 'todos';
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 34,
+    filter: 'blur(8px)',
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.65,
+      ease: 'easeOut',
+    },
+  },
+};
 
 export function PortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState<ActiveCategory>('todos');
-  const [activeProjectIndex, setActiveProjectIndex] = useState<number | null>(null);
+  const navigate = useNavigate();
 
-  const filteredProjects = useMemo(() => {
-    if (activeCategory === 'todos') return projects;
-
-    return projects.filter((project) => project.category === activeCategory);
-  }, [activeCategory]);
+  const categories = portfolioCategories.filter(
+    (category) => category.id !== 'todos'
+  );
 
   return (
     <section id="portfolio" className="section portfolio-section">
@@ -30,93 +36,34 @@ export function PortfolioSection() {
         <SectionHeader
           eyebrow="Portfólio"
           title="Ambientes planejados"
-          description="Explore projetos desenvolvidos para transformar cada espaço em uma experiência única."
+          description="Escolha uma categoria e explore projetos desenvolvidos para transformar cada espaço."
         />
-
-        <div className="portfolio-category-list" aria-label="Categorias do portfólio">
-          {portfolioCategories.map((category) => (
-            <button
-              className={`portfolio-category ${
-                activeCategory === category.id ? 'portfolio-category--active' : ''
-              }`}
-              key={category.id}
-              type="button"
-              onClick={() => setActiveCategory(category.id)}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
       </Container>
 
-      <div className="portfolio-section__projects">
-        <button
-          className="portfolio-arrow portfolio-arrow--previous"
-          type="button"
-          aria-label="Ver projetos anteriores"
-        >
-          <ChevronLeft size={28} />
-        </button>
+      <motion.div
+        className="portfolio-category-showcase"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+      >
+        {categories.map((category) => (
+          <motion.button
+            key={category.id}
+            type="button"
+            className={`portfolio-category-card portfolio-category-card--${category.id}`}
+            variants={cardVariants}
+            onClick={() => navigate(`/portfolio/${category.id}`)}
+          >
+            <div className="portfolio-category-card__content">
+              <h3>{category.label}</h3>
 
-        <Swiper
-          key={activeCategory}
-          className="portfolio-swiper"
-          modules={[Autoplay, Navigation]}
-          loop={filteredProjects.length > 3}
-          speed={900}
-          spaceBetween={42}
-          slidesPerView="auto"
-          grabCursor
-          autoplay={{
-            delay: 4500,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          navigation={{
-            prevEl: '.portfolio-arrow--previous',
-            nextEl: '.portfolio-arrow--next',
-          }}
-        >
-          {filteredProjects.map((project) => {
-            const projectIndex = projects.findIndex((item) => item.id === project.id);
-
-            return (
-              <SwiperSlide className="portfolio-slide" key={project.id}>
-                <button
-                  className="project-card"
-                  type="button"
-                  onClick={() => setActiveProjectIndex(projectIndex)}
-                >
-                  <div className="project-card__media">
-                    <img src={project.images[0]} alt={project.title} loading="lazy" />
-                    <span className="project-card__tag">{project.tag}</span>
-                    <span className="project-card__hover">Ver galeria</span>
-                  </div>
-
-                  <h3>{project.title}</h3>
-                  <p>{project.categoryLabel}</p>
-                </button>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-
-        <button
-          className="portfolio-arrow portfolio-arrow--next"
-          type="button"
-          aria-label="Ver próximos projetos"
-        >
-          <ChevronRight size={28} />
-        </button>
-      </div>
-
-      {activeProjectIndex !== null && (
-        <ProjectGalleryModal
-          activeIndex={activeProjectIndex}
-          onChange={setActiveProjectIndex}
-          onClose={() => setActiveProjectIndex(null)}
-        />
-      )}
+              <span className="portfolio-category-card__link">
+                Ver projetos <ArrowUpRight size={18} />
+              </span>
+            </div>
+          </motion.button>
+        ))}
+      </motion.div>
     </section>
   );
 }

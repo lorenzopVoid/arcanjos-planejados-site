@@ -10,11 +10,11 @@ export const company = {
   whatsapp: '5584988445467',
 };
 
-export const navigation: NavItem[] = [
-  { label: 'Início', href: '#inicio' },
-  { label: 'Sobre nós', href: '#sobre' },
-  { label: 'Processo', href: '#processo' },
-  { label: 'Portfólio', href: '#portfolio' },
-  { label: 'Orçamento', href: '#orcamento' },
-  { label: 'Contato', href: '#contato' },
+export const navigation = [
+  { label: 'Início', href: '/#inicio' },
+  { label: 'Sobre Nós', href: '/#sobre' },
+  { label: 'Processo', href: '/#processo' },
+  { label: 'Portfólio', href: '/#portfolio' },
+  { label: 'Orçamento', href: '/#orcamento' },
+  { label: 'Contato', href: '/#contato' },
 ];
