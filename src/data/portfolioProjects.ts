@@ -26,15 +26,16 @@ import cozinhaCompacta12 from '../assets/projects/cozinhas/compactas/12.jpg';
 import cozinhaCompacta13 from '../assets/projects/cozinhas/compactas/13.jpg';
 import cozinhaCompacta14 from '../assets/projects/cozinhas/compactas/14.jpg';
 
+import cozinhaGrande01 from '../assets/projects/cozinhas/grandes/01.png';
 import cozinhaGrande02 from '../assets/projects/cozinhas/grandes/02.jpg';
 import cozinhaGrande03 from '../assets/projects/cozinhas/grandes/03.jpg';
 import cozinhaGrande04 from '../assets/projects/cozinhas/grandes/04.jpg';
 import cozinhaGrande05 from '../assets/projects/cozinhas/grandes/05.png';
 import cozinhaGrande06 from '../assets/projects/cozinhas/grandes/06.png';
 
+import cozinhaMedia01 from '../assets/projects/cozinhas/media/01.jpg';
 import cozinhaMedia02 from '../assets/projects/cozinhas/media/02.jpg';
-import cozinhaMedia27 from '../assets/projects/cozinhas/media/27.jpg';
-import cozinhaMedia28 from '../assets/projects/cozinhas/media/28.jpg';
+import cozinhaMedia03 from '../assets/projects/cozinhas/media/03.jpg';
 
 export type PortfolioProjectGroup = {
   id: string;
@@ -72,6 +73,7 @@ export const portfolioProjectGroups: PortfolioProjectGroup[] = [
       cozinhaCompacta14,
     ],
   },
+
   {
     id: 'cozinhas-media',
     category: 'cozinha',
@@ -79,9 +81,14 @@ export const portfolioProjectGroups: PortfolioProjectGroup[] = [
     subtitle: 'Equilíbrio entre praticidade, circulação e design.',
     description:
       'Referências de cozinhas médias com soluções planejadas para melhorar o fluxo, ampliar o armazenamento e criar uma composição visual elegante.',
-    cover: cozinhaMedia02,
-    images: [cozinhaMedia02, cozinhaMedia27, cozinhaMedia28],
+    cover: cozinhaMedia01,
+    images: [
+      cozinhaMedia01,
+      cozinhaMedia02,
+      cozinhaMedia03,
+    ],
   },
+
   {
     id: 'cozinhas-grandes',
     category: 'cozinha',
@@ -89,8 +96,9 @@ export const portfolioProjectGroups: PortfolioProjectGroup[] = [
     subtitle: 'Ambientes amplos com composição completa.',
     description:
       'Inspirações para cozinhas grandes com marcenaria planejada, torres, aéreos, bancadas amplas e soluções para uma rotina mais confortável.',
-    cover: cozinhaGrande02,
+    cover: cozinhaGrande01,
     images: [
+      cozinhaGrande01,
       cozinhaGrande02,
       cozinhaGrande03,
       cozinhaGrande04,
@@ -98,6 +106,7 @@ export const portfolioProjectGroups: PortfolioProjectGroup[] = [
       cozinhaGrande06,
     ],
   },
+
   {
     id: 'cozinhas-com-lavanderia',
     category: 'cozinha',
@@ -106,8 +115,13 @@ export const portfolioProjectGroups: PortfolioProjectGroup[] = [
     description:
       'Referências de cozinhas integradas à lavanderia, com soluções planejadas para organização, circulação e separação visual dos ambientes.',
     cover: cozinhaLavanderia01,
-    images: [cozinhaLavanderia01, cozinhaLavanderia02, cozinhaLavanderia03],
+    images: [
+      cozinhaLavanderia01,
+      cozinhaLavanderia02,
+      cozinhaLavanderia03,
+    ],
   },
+
   {
     id: 'cozinhas-com-ilha',
     category: 'cozinha',
