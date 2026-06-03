@@ -1,41 +1,41 @@
-import cozinhaIlha01 from '../assets/projects/cozinhas/com-ilha/01.jpg';
-import cozinhaIlha02 from '../assets/projects/cozinhas/com-ilha/02.jpg';
-import cozinhaIlha03 from '../assets/projects/cozinhas/com-ilha/03.jpg';
-import cozinhaIlha04 from '../assets/projects/cozinhas/com-ilha/04.jpg';
-import cozinhaIlha05 from '../assets/projects/cozinhas/com-ilha/05.jpg';
-import cozinhaIlha06 from '../assets/projects/cozinhas/com-ilha/06.jpg';
-import cozinhaIlha07 from '../assets/projects/cozinhas/com-ilha/07.jpg';
-import cozinhaIlha08 from '../assets/projects/cozinhas/com-ilha/08.jpg';
+import cozinhaIlha01 from '../assets/projects/cozinhas/com-ilha/01.webp';
+import cozinhaIlha02 from '../assets/projects/cozinhas/com-ilha/02.webp';
+import cozinhaIlha03 from '../assets/projects/cozinhas/com-ilha/03.webp';
+import cozinhaIlha04 from '../assets/projects/cozinhas/com-ilha/04.webp';
+import cozinhaIlha05 from '../assets/projects/cozinhas/com-ilha/05.webp';
+import cozinhaIlha06 from '../assets/projects/cozinhas/com-ilha/06.webp';
+import cozinhaIlha07 from '../assets/projects/cozinhas/com-ilha/07.webp';
+import cozinhaIlha08 from '../assets/projects/cozinhas/com-ilha/08.webp';
 
-import cozinhaLavanderia01 from '../assets/projects/cozinhas/com-lavanderia/01.png';
-import cozinhaLavanderia02 from '../assets/projects/cozinhas/com-lavanderia/02.jpg';
-import cozinhaLavanderia03 from '../assets/projects/cozinhas/com-lavanderia/03.jpg';
+import cozinhaLavanderia01 from '../assets/projects/cozinhas/com-lavanderia/01.webp';
+import cozinhaLavanderia02 from '../assets/projects/cozinhas/com-lavanderia/02.webp';
+import cozinhaLavanderia03 from '../assets/projects/cozinhas/com-lavanderia/03.webp';
 
-import cozinhaCompacta01 from '../assets/projects/cozinhas/compactas/01.png';
-import cozinhaCompacta02 from '../assets/projects/cozinhas/compactas/02.jpg';
-import cozinhaCompacta03 from '../assets/projects/cozinhas/compactas/03.jpg';
-import cozinhaCompacta04 from '../assets/projects/cozinhas/compactas/04.jpg';
-import cozinhaCompacta05 from '../assets/projects/cozinhas/compactas/05.jpg';
-import cozinhaCompacta06 from '../assets/projects/cozinhas/compactas/06.jpg';
-import cozinhaCompacta07 from '../assets/projects/cozinhas/compactas/07.jpg';
-import cozinhaCompacta08 from '../assets/projects/cozinhas/compactas/08.jpg';
-import cozinhaCompacta09 from '../assets/projects/cozinhas/compactas/09.jpg';
-import cozinhaCompacta10 from '../assets/projects/cozinhas/compactas/10.jpg';
-import cozinhaCompacta11 from '../assets/projects/cozinhas/compactas/11.jpg';
-import cozinhaCompacta12 from '../assets/projects/cozinhas/compactas/12.jpg';
-import cozinhaCompacta13 from '../assets/projects/cozinhas/compactas/13.jpg';
-import cozinhaCompacta14 from '../assets/projects/cozinhas/compactas/14.jpg';
+import cozinhaCompacta01 from '../assets/projects/cozinhas/compactas/01.webp';
+import cozinhaCompacta02 from '../assets/projects/cozinhas/compactas/02.webp';
+import cozinhaCompacta03 from '../assets/projects/cozinhas/compactas/03.webp';
+import cozinhaCompacta04 from '../assets/projects/cozinhas/compactas/04.webp';
+import cozinhaCompacta05 from '../assets/projects/cozinhas/compactas/05.webp';
+import cozinhaCompacta06 from '../assets/projects/cozinhas/compactas/06.webp';
+import cozinhaCompacta07 from '../assets/projects/cozinhas/compactas/07.webp';
+import cozinhaCompacta08 from '../assets/projects/cozinhas/compactas/08.webp';
+import cozinhaCompacta09 from '../assets/projects/cozinhas/compactas/09.webp';
+import cozinhaCompacta10 from '../assets/projects/cozinhas/compactas/10.webp';
+import cozinhaCompacta11 from '../assets/projects/cozinhas/compactas/11.webp';
+import cozinhaCompacta12 from '../assets/projects/cozinhas/compactas/12.webp';
+import cozinhaCompacta13 from '../assets/projects/cozinhas/compactas/13.webp';
+import cozinhaCompacta14 from '../assets/projects/cozinhas/compactas/14.webp';
 
-import cozinhaGrande01 from '../assets/projects/cozinhas/grandes/01.png';
-import cozinhaGrande02 from '../assets/projects/cozinhas/grandes/02.jpg';
-import cozinhaGrande03 from '../assets/projects/cozinhas/grandes/03.jpg';
-import cozinhaGrande04 from '../assets/projects/cozinhas/grandes/04.jpg';
-import cozinhaGrande05 from '../assets/projects/cozinhas/grandes/05.png';
-import cozinhaGrande06 from '../assets/projects/cozinhas/grandes/06.png';
+import cozinhaGrande01 from '../assets/projects/cozinhas/grandes/01.webp';
+import cozinhaGrande02 from '../assets/projects/cozinhas/grandes/02.webp';
+import cozinhaGrande03 from '../assets/projects/cozinhas/grandes/03.webp';
+import cozinhaGrande04 from '../assets/projects/cozinhas/grandes/04.webp';
+import cozinhaGrande05 from '../assets/projects/cozinhas/grandes/05.webp';
+import cozinhaGrande06 from '../assets/projects/cozinhas/grandes/06.webp';
 
-import cozinhaMedia01 from '../assets/projects/cozinhas/media/01.jpg';
-import cozinhaMedia02 from '../assets/projects/cozinhas/media/02.jpg';
-import cozinhaMedia03 from '../assets/projects/cozinhas/media/03.jpg';
+import cozinhaMedia01 from '../assets/projects/cozinhas/media/01.webp';
+import cozinhaMedia02 from '../assets/projects/cozinhas/media/02.webp';
+import cozinhaMedia03 from '../assets/projects/cozinhas/media/03.webp';
 
 export type PortfolioProjectGroup = {
   id: string;

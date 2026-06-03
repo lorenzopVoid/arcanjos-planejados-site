@@ -64,6 +64,16 @@ export function PortfolioCategoryPage() {
     );
   };
 
+  const handleProjectMouseMove = (
+    event: ReactMouseEvent<HTMLButtonElement>
+  ) => {
+    const card = event.currentTarget;
+    const rect = card.getBoundingClientRect();
+
+    card.style.setProperty('--cursor-x', `${event.clientX - rect.left}px`);
+    card.style.setProperty('--cursor-y', `${event.clientY - rect.top}px`);
+  };
+
   const handleThumbsMouseDown = (
     event: ReactMouseEvent<HTMLDivElement>
   ) => {
@@ -92,17 +102,9 @@ export function PortfolioCategoryPage() {
     if (!activeProject) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        closeModal();
-      }
-
-      if (event.key === 'ArrowLeft') {
-        showPreviousImage();
-      }
-
-      if (event.key === 'ArrowRight') {
-        showNextImage();
-      }
+      if (event.key === 'Escape') closeModal();
+      if (event.key === 'ArrowLeft') showPreviousImage();
+      if (event.key === 'ArrowRight') showNextImage();
     };
 
     document.body.style.overflow = 'hidden';
@@ -140,23 +142,33 @@ export function PortfolioCategoryPage() {
                 className="portfolio-project-card"
                 key={project.id}
                 type="button"
+                onMouseMove={handleProjectMouseMove}
                 onClick={() => {
                   setActiveProject(project);
                   setActiveImage(0);
                   setIsZoomed(false);
                 }}
               >
-                <img src={project.cover} alt={project.title} />
+                <div className="portfolio-project-card__media">
+                  <img src={project.cover} alt={project.title} />
 
-                <div className="portfolio-project-card__overlay" />
+                  <div className="portfolio-project-card__overlay" />
 
-                <div className="portfolio-project-card__content">
+                  <div className="portfolio-project-card__top">
+                    <span>Inspiração</span>
+                    <span>{project.subtitle}</span>
+                  </div>
+
+                  <div className="portfolio-project-card__details">
+                    Detalhes
+                  </div>
+                </div>
+
+                <div className="portfolio-project-card__footer">
                   <h2>{project.title}</h2>
 
-                  <p>{project.subtitle}</p>
-
                   <span>
-                    Ver galeria <ArrowUpRight size={18} />
+                    <ArrowUpRight size={22} />
                   </span>
                 </div>
               </button>
