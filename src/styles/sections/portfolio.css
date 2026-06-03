@@ -201,7 +201,7 @@
 
 .portfolio-project-card__media {
   position: relative;
-  height: 520px;
+  height: 420px;
   overflow: hidden;
   background: #0b1220;
 }
@@ -319,9 +319,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 14px;
 
-  padding: 26px 0 18px;
+  padding: 18px 0 14px;
   border-bottom: 1px solid rgb(15 23 42 / 20%);
 }
 
@@ -346,11 +346,16 @@
 .portfolio-project-card__footer h2 {
   margin: 0;
   color: #111827;
-  font-size: clamp(1.8rem, 3vw, 3rem);
+
+  font-size: clamp(1.05rem, 1.55vw, 1.75rem);
   font-weight: 750;
-  letter-spacing: 0.08em;
-  line-height: 1;
+
+  letter-spacing: 0.06em;
+  line-height: 1.08;
+
   text-transform: uppercase;
+
+  max-width: 92%;
 }
 
 .portfolio-project-card__footer span {
@@ -647,7 +652,7 @@
   }
 
   .portfolio-project-card__media {
-    height: 420px;
+    height: 360px;
   }
 
   .portfolio-modal {
@@ -706,7 +711,7 @@
   }
 
   .portfolio-project-card__media {
-    height: 340px;
+    height: 300px;
   }
 
   .portfolio-project-card__details {

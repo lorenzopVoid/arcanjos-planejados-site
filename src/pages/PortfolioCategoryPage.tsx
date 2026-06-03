@@ -150,7 +150,7 @@ export function PortfolioCategoryPage() {
                 }}
               >
                 <div className="portfolio-project-card__media">
-                  <img src={project.cover} alt={project.title} />
+                  <img src={project.cover} alt={project.title} loading="lazy"  />
 
                   <div className="portfolio-project-card__overlay" />
 
@@ -270,7 +270,7 @@ export function PortfolioCategoryPage() {
                       setIsZoomed(false);
                     }}
                   >
-                    <img src={image} alt="" />
+                    <img src={image} alt="" loading="lazy" />
                   </button>
                 ))}
               </div>
