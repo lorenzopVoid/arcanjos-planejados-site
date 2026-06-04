@@ -1,4 +1,6 @@
+import type { FormEvent } from 'react';
 import { Mail, Phone } from 'lucide-react';
+import { motion, type Variants } from 'framer-motion';
 
 import { company } from '../../data/site';
 import { Container } from '../ui/Container';
@@ -6,11 +8,82 @@ import { SectionHeader } from '../ui/SectionHeader';
 
 const formAction = `https://formsubmit.co/${company.email}`;
 
+const sectionVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 36,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: 'easeOut',
+    },
+  },
+};
+
+const formVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 42,
+    scale: 0.98,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.75,
+      ease: 'easeOut',
+      delay: 0.12,
+    },
+  },
+};
+
 export function BudgetFormSection() {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const nome = String(formData.get('nome') || '');
+    const whatsapp = String(formData.get('whatsapp') || '');
+    const email = String(formData.get('email') || '');
+    const ambiente = String(formData.get('ambiente') || '');
+    const mensagem = String(formData.get('mensagem') || '');
+
+    const phone = company.phones[0]?.replace(/\D/g, '');
+
+    const whatsappMessage = `
+Olá, vim pelo site da Arcanjos Planejados e gostaria de solicitar um orçamento.
+
+Nome: ${nome}
+WhatsApp: ${whatsapp}
+E-mail: ${email || 'Não informado'}
+Ambiente desejado: ${ambiente}
+
+Mensagem:
+${mensagem}
+    `.trim();
+
+    if (phone) {
+      window.open(
+        `https://wa.me/55${phone}?text=${encodeURIComponent(whatsappMessage)}`,
+        '_blank',
+        'noopener,noreferrer'
+      );
+    }
+  };
+
   return (
     <section id="orcamento" className="section budget-section">
       <Container className="budget-section__grid">
-        <div>
+        <motion.div
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <SectionHeader
             eyebrow="Orçamento"
             title="Solicite uma visita ou orçamento"
@@ -29,9 +102,18 @@ export function BudgetFormSection() {
               </a>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <form className="budget-form" action={formAction} method="POST">
+        <motion.form
+          className="budget-form"
+          action={formAction}
+          method="POST"
+          onSubmit={handleSubmit}
+          variants={formVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <input
             type="hidden"
             name="_subject"
@@ -60,12 +142,21 @@ export function BudgetFormSection() {
 
           <label>
             WhatsApp
-            <input name="whatsapp" type="tel" placeholder="(84) 99999-9999" required />
+            <input
+              name="whatsapp"
+              type="tel"
+              placeholder="(84) 99999-9999"
+              required
+            />
           </label>
 
           <label>
             E-mail
-            <input name="email" type="email" placeholder="seuemail@exemplo.com" />
+            <input
+              name="email"
+              type="email"
+              placeholder="seuemail@exemplo.com"
+            />
           </label>
 
           <label>
@@ -78,9 +169,13 @@ export function BudgetFormSection() {
               <option value="Sala planejada">Sala planejada</option>
               <option value="Quarto planejado">Quarto planejado</option>
               <option value="Closet planejado">Closet planejado</option>
-              <option value="Escritório planejado">Escritório planejado</option>
+              <option value="Escritório planejado">
+                Escritório planejado
+              </option>
               <option value="Banheiro planejado">Banheiro planejado</option>
-              <option value="Área externa planejada">Área externa planejada</option>
+              <option value="Área externa planejada">
+                Área externa planejada
+              </option>
             </select>
           </label>
 
@@ -97,8 +192,7 @@ export function BudgetFormSection() {
           <button className="button button--gold budget-form__full" type="submit">
             Enviar solicitação
           </button>
-
-        </form>
+        </motion.form>
       </Container>
     </section>
   );
