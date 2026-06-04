@@ -1,29 +1,148 @@
 .cta-section {
+  position: relative;
+  overflow: hidden;
+
   padding: 120px 0;
+
   background:
-    radial-gradient(circle at 50% 0%, rgb(216 178 95 / 20%), transparent 34%),
+    radial-gradient(circle at 50% 0%, rgb(216 178 95 / 24%), transparent 34%),
+    radial-gradient(circle at 14% 88%, rgb(216 178 95 / 10%), transparent 28%),
     linear-gradient(135deg, var(--color-black), var(--color-navy));
+
   color: var(--color-white);
   text-align: center;
 }
 
+.cta-section::before {
+  content: '';
+
+  position: absolute;
+  top: -160px;
+  left: 50%;
+
+  width: 520px;
+  height: 520px;
+
+  border-radius: 999px;
+
+  background: rgb(216 178 95 / 18%);
+  filter: blur(96px);
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+}
+
+.cta-section::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgb(255 255 255 / 6%) 44%,
+      transparent 72%
+    );
+
+  opacity: 0.5;
+
+  pointer-events: none;
+}
+
 .cta-section__content {
+  position: relative;
+  z-index: 1;
+
   max-width: 900px;
+  margin: 0 auto;
+}
+
+.cta-section__icon {
+  display: grid;
+  place-items: center;
+
+  width: 118px;
+  height: 118px;
+
+  margin: 0 auto 34px;
+
+  border: 1px solid rgb(216 178 95 / 28%);
+  border-radius: 999px;
+
+  background:
+    radial-gradient(circle at 50% 35%, rgb(216 178 95 / 18%), transparent 58%),
+    rgb(255 255 255 / 5%);
+
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 6%) inset,
+    0 24px 60px rgb(216 178 95 / 12%);
 }
 
 .cta-section svg {
-  margin: 0 auto 34px;
   color: var(--color-gold-light);
+
+  filter:
+    drop-shadow(0 0 12px rgb(216 178 95 / 42%))
+    drop-shadow(0 0 30px rgb(216 178 95 / 20%));
 }
 
 .cta-section h2 {
+  margin: 0;
+
   font-size: var(--section-title-size);
+  letter-spacing: -0.06em;
 }
 
 .cta-section p {
+  max-width: 650px;
+
+  margin: 22px auto 0;
+
   color: rgb(255 255 255 / 78%);
+
+  font-size: 1.08rem;
+  line-height: 1.7;
 }
 
 .cta-section .button {
   margin-top: 42px;
+
+  box-shadow:
+    0 18px 42px rgb(216 178 95 / 26%),
+    inset 0 1px 0 rgb(255 255 255 / 35%);
+
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.cta-section .button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 26px 58px rgb(216 178 95 / 36%),
+    inset 0 1px 0 rgb(255 255 255 / 42%);
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 92px 0;
+  }
+
+  .cta-section__icon {
+    width: 96px;
+    height: 96px;
+  }
+
+  .cta-section svg {
+    width: 54px;
+    height: 54px;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
 }
