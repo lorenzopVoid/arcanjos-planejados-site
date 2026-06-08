@@ -15,3 +15,12 @@
 @import './sections/budget.css';
 @import './sections/footer.css';
 @import './sections/responsive.css';
+
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
