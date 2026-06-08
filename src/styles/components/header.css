@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 1000;
 
   width: 100%;
   height: 86px;
@@ -21,7 +21,7 @@
 
 .site-header__content {
   position: relative;
-  z-index: 10002;
+  z-index: 1002;
 
   display: grid;
   grid-template-columns: 260px 1fr 230px;
@@ -40,47 +40,36 @@
   background: #071224;
 }
 
-/* LOGO / TEXTO */
+/* LOGO */
 
 .brand {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  display: flex;
+  align-items: center;
 
-  width: fit-content;
+  width: 260px;
   height: 86px;
 
-  color: #d8b25f;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
-.brand strong {
-  color: #d8b25f;
+.brand img {
+  width: 240px;
+  height: auto;
 
-  font-size: clamp(1.35rem, 2vw, 2rem);
-  font-weight: 850;
+  object-fit: contain;
+  display: block;
 
-  letter-spacing: 0.08em;
-  line-height: 1;
-
-  text-shadow: 0 0 18px rgb(216 178 95 / 18%);
+  filter:
+    drop-shadow(0 0 8px rgb(216 178 95 / 18%))
+    drop-shadow(0 0 20px rgb(216 178 95 / 10%));
 }
 
 .brand span {
-  display: block;
+  display: none;
+}
 
-  margin-top: 4px;
-  padding-left: 4px;
-
-  color: rgb(216 178 95 / 82%);
-
-  font-size: 0.62rem;
-  font-weight: 800;
-
-  letter-spacing: 0.38em;
-  line-height: 1;
+.brand__mobile-title {
+  display: none;
 }
 
 /* MENU DESKTOP */
@@ -115,7 +104,6 @@
 
 .site-header__nav a span {
   display: block;
-
   transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -129,7 +117,6 @@
   color: #d8b25f;
 
   transform: translateY(130%);
-
   transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -141,7 +128,7 @@
   transform: translateY(0);
 }
 
-/* CTA DESKTOP */
+/* BOTÃO DESKTOP */
 
 .site-header__cta {
   justify-self: end;
@@ -176,11 +163,13 @@
 
 .site-header__cta:hover {
   background: #e1bf73;
+
   transform: translateY(-2px);
+
   box-shadow: 0 10px 24px rgb(216 178 95 / 30%);
 }
 
-/* BOTÃO MOBILE */
+/* BOTÃO MENU MOBILE */
 
 .site-header__menu {
   display: none;
@@ -196,27 +185,31 @@
 
 .site-header__mobile-panel {
   position: fixed;
-  inset: 0;
-  z-index: 10001;
+  top: 82px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1001;
 
   width: 100%;
-  height: 100dvh;
+  max-width: 100%;
 
   box-sizing: border-box;
 
-  padding: 118px 26px 34px;
+  padding: 34px 28px;
 
-  background:
-    radial-gradient(circle at top right, rgb(216 178 95 / 14%), transparent 34%),
-    #071224;
+  background: #071224;
 
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 
-  transform: translateY(-16px);
+  transform: translateY(-12px);
 
   transition:
     opacity 320ms ease,
+    visibility 320ms ease,
     transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -229,7 +222,7 @@
   color: white;
   text-decoration: none;
 
-  font-size: clamp(2rem, 9vw, 3.6rem);
+  font-size: clamp(1.8rem, 8vw, 3.4rem);
   font-weight: 850;
 
   letter-spacing: -0.06em;
@@ -240,8 +233,7 @@
 
   transition:
     opacity 360ms ease,
-    transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
-    color 250ms ease;
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .site-header__mobile-nav a:hover {
@@ -250,12 +242,13 @@
 
 .site-header__mobile-cta {
   width: 100%;
-  margin-top: 36px;
+  margin-top: 34px;
   justify-content: center;
 }
 
 .site-header--open .site-header__mobile-panel {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
 }
@@ -282,11 +275,13 @@
   }
 
   .brand {
+    width: 220px;
     height: 80px;
   }
 
-  .brand strong {
-    font-size: 1.55rem;
+  .brand img {
+    width: 205px;
+    max-height: 62px;
   }
 
   .site-header__nav {
@@ -312,7 +307,8 @@
 
 @media (max-width: 980px) {
   .site-header {
-    height: 86px;
+    height: 82px;
+    background: #071224;
   }
 
   .site-header__content {
@@ -321,25 +317,53 @@
     align-items: center;
 
     width: 100%;
-    height: 86px;
+    height: 82px;
 
     box-sizing: border-box;
 
-    padding: 0 26px;
+    padding: 0 22px;
   }
 
   .brand {
+    width: auto;
     height: auto;
   }
 
-  .brand strong {
-    font-size: 1.55rem;
-    letter-spacing: 0.08em;
+  .brand img {
+    display: none;
   }
 
   .brand span {
-    font-size: 0.58rem;
+    display: none;
+  }
+
+  .brand__mobile-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    color: #d8b25f;
+    text-transform: uppercase;
+  }
+
+  .brand__mobile-title strong {
+    font-size: 1.46rem;
+    font-weight: 850;
+
+    letter-spacing: 0.08em;
+    line-height: 1;
+  }
+
+  .brand__mobile-title small {
+    margin-top: 5px;
+
+    color: rgb(216 178 95 / 82%);
+
+    font-size: 0.54rem;
+    font-weight: 800;
+
     letter-spacing: 0.34em;
+    line-height: 1;
   }
 
   .site-header__nav,
@@ -349,7 +373,7 @@
 
   .site-header__menu {
     position: relative;
-    z-index: 10003;
+    z-index: 1003;
 
     display: flex;
     align-items: center;
@@ -359,22 +383,26 @@
   }
 
   .site-header__menu svg {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .site-header__mobile-panel {
+    top: 82px;
   }
 }
 
 @media (max-width: 420px) {
   .site-header__content {
-    padding: 0 22px;
+    padding: 0 18px;
   }
 
-  .brand strong {
-    font-size: 1.35rem;
+  .brand__mobile-title strong {
+    font-size: 1.25rem;
   }
 
-  .brand span {
-    font-size: 0.52rem;
+  .brand__mobile-title small {
+    font-size: 0.48rem;
     letter-spacing: 0.3em;
   }
 }

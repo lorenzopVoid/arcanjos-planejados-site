@@ -7,11 +7,6 @@ import { createWhatsAppUrl } from '../../lib/whatsapp';
 import { ButtonLink } from '../ui/ButtonLink';
 import { Container } from '../ui/Container';
 
-function getNavigationHref(href: string) {
-  if (href.startsWith('/')) return href;
-  return `/${href}`;
-}
-
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -23,9 +18,9 @@ export function Header() {
     <header className={`site-header ${isMenuOpen ? 'site-header--open' : ''}`}>
       <Container className="site-header__content">
         <a href="/#inicio" className="brand" aria-label={company.name} onClick={closeMenu}>
-          <img className="brand__logo" src={logo} alt="Logo Arcanjos Planejados" />
+          <img src={logo} alt="Logo Arcanjos Planejados" />
 
-          <span className="brand__mobile-text">
+          <span className="brand__mobile-title">
             <strong>Arcanjos</strong>
             <small>Planejados</small>
           </span>
@@ -33,7 +28,7 @@ export function Header() {
 
         <nav className="site-header__nav" aria-label="Navegação principal">
           {navigation.map((item) => (
-            <a key={item.href} href={getNavigationHref(item.href)} data-label={item.label}>
+            <a key={item.href} href={item.href} data-label={item.label}>
               <span>{item.label}</span>
             </a>
           ))}
@@ -56,28 +51,34 @@ export function Header() {
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((current) => !current)}
         >
-          {isMenuOpen ? <X size={36} /> : <Menu size={36} />}
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </Container>
 
       <div className="site-header__mobile-panel">
         <nav className="site-header__mobile-nav" aria-label="Navegação mobile">
-          {navigation.map((item) => (
-            <a key={item.href} href={getNavigationHref(item.href)} onClick={closeMenu}>
+          {navigation.map((item, index) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={closeMenu}
+              style={{ transitionDelay: `${index * 55}ms` }}
+            >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <a
+        <ButtonLink
           href={createWhatsAppUrl()}
-          className="button button--gold site-header__mobile-cta"
+          variant="light"
+          className="site-header__mobile-cta"
           target="_blank"
           rel="noreferrer"
           onClick={closeMenu}
         >
           Solicitar Orçamento
-        </a>
+        </ButtonLink>
       </div>
     </header>
   );
