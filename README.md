@@ -1,5 +1,7 @@
 # Arcanjos Planejados
 
+![Preview do Projeto](./preview.png)
+
 Landing page institucional desenvolvida para a **Arcanjos Planejados**, empresa especializada em móveis planejados sob medida para ambientes residenciais e corporativos.
 
 O projeto foi criado com foco em uma experiência premium, design moderno, alta performance e geração de leads para captação de novos clientes.
@@ -234,9 +236,9 @@ npm run preview
 
 Desenvolvedor Front-end | Designer de Interfaces
 
-**E-mail:** [lorenzo_paulino1@outlook.com](mailto:lorenzo_paulino1@outlook.com)
+**E-mail:** [lorenzo.paulino1998@gmail.com](mailto:lorenzo.paulino1998@gmail.com)
 
-**GitHub:** https://github.com/SEU-USUARIO
+**GitHub:** https://github.com/lorenzopVoid
 
 ---
 
